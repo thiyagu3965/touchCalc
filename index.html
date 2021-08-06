@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Touch Calc</title>
+  <title>Bootstrap Example</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -52,8 +52,24 @@
         <input type="number" class="form-control" id="nallavelli" placeholder="Enter nallavelli" onkeyup="TouchCalc()" step="any" name="email">
       </div>
     </div>
-    
+   
     <div class="well" id="ChangingTouch"></div>
+
+    <h2>Pure Calculation</h2>
+    <form class="form-horizontal" action="/action_page.php">
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="email">Weight:</label>
+        <div class="col-sm-10">
+          <input type="number" class="form-control" id="weight1" placeholder="Enter weight" onkeyup="PureCalc()" step="any" name="email">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="email">Touch:</label>
+        <div class="col-sm-10">
+          <input type="number" class="form-control" id="touch1" placeholder="Enter weight" onkeyup="PureCalc()" step="any" name="email">
+        </div>
+      </div>
+      <div class="well" id="PureVal"></div>
    
   </form>
 </div>
@@ -77,6 +93,13 @@
     console.log(TotalWeight+" and "+TotalWeightOfPure + "and last touch is"+ChangingTouch)
 
     document.getElementById('ChangingTouch').innerHTML = ChangingTouch?ChangingTouch.toFixed(2):" "
+
+    }
+    function PureCalc(){
+      var weight1 =  document.getElementById('weight1').value
+    var touch1 =  document.getElementById('touch1').value
+    var resultPure = (weight1 * touch1)/100
+    document.getElementById('PureVal').innerHTML = resultPure.toFixed(3)
 
     }
 </script>
